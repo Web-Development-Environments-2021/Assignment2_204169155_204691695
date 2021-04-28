@@ -222,9 +222,6 @@ $("#Play_btn, #Play_nav, #btn_new_game").click(function(){
   $("#btn_keyright").val('ArrowRight');
   $("#btn_keyup").val('ArrowUp');
   $("#btn_keydown").val('ArrowDown');
-  pacmusic.volume = 0;
-  die.volume = 0;
-  eat.volume = 0;
   StopBackMusic();
 });
 

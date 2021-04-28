@@ -148,6 +148,9 @@ function checkIfDuplicateExists(){
 }
 
 function StopBackMusic(){
+    pacmusic.volume = 0;
+    die.volume = 0;
+    eat.volume = 0;
     pacmusic.pause();
     pacmusic.currentTime = 0;
 }
