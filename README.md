@@ -7,7 +7,7 @@ Tom Nachman and Asaf Salomon
 204691695 , 204169155
 
 ### Link to git Pages
-You can click [here](https://web-development-environments-2021.github.io/assignment2-asafsalo/) 🔗 to play Pacman.
+You can click [here](https://web-development-environments-2021.github.io/Assignment2_204169155_204691695/) 🔗 to play Pacman.
 
 ## Information
 * Structure was build according to the Instructions file
