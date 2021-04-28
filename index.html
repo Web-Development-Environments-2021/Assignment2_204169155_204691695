@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="authors" content="Tom Nachman and Asaf Salomon" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <title>PACMAN</title>
+    <!--Links -->
+    <link rel="shortcut icon" type="image/png" href="assets/pacmanIcon.png" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300"
+    />
+    <!-- Scripts -->
+
+    <script
+      type="text/javascript"
+      src="./scripts/jquery-3.4.1.slim.min.js"
+    ></script>
+
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>  <body>
+    <!-- Header -->
+    <div class="header">
+      <img
+        src="./assets/pacmanIcon.png"
+        style="width: 4%"
+        class="mainPacmanIcon"
+      />
+      <h1>Pacman Game</h1>
+      <div class="devs-credit">
+        <h4>Tom Nachman</h4>
+        <h4>Asaf Salomon</h4>
+      </div>
+    </div>
+
+    <!-- Menu (Changing) -->
+    <div id="menu-nav">
+      <div id="navigation-bar">
+        <ul>
+          <li id="Welcome_nav">
+            <a href="#"><i class="fa fa-home"></i><span> Welcome</span></a>
+          </li>
+          <li id="Login_nav">
+            <a href="#"
+              ><i class="fas fa-sign-in-alt"></i><span> Login</span></a
+            >
+          </li>
+          <li id="Register_nav">
+            <a href="#"><i class="fa fa-user"></i><span> Register</span></a>
+          </li>
+          <li id="Play_nav">
+            <a href="#"><i class="fas fa-ghost"></i><span> Play</span></a>
+          </li>
+          <li id="Logout_nav">
+            <a href="#"
+              ><i class="fas fa-sign-out-alt"></i><span> Logout</span></a
+            >
+          </li>
+          <li id="About_nav">
+            <a href="#"
+              ><i class="fas fa-address-card"></i> <span> About</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Welcome Content -->
+    <div id="Welcome_content" class="content">
+      <div class="container">
+        <h1 id="welcom-user">welcome</h1>
+        <img
+          id="welcome_gif"
+          src="assets/PacmanMoving.gif"
+          alt="wlgif"
+          style="width: 40vmin"
+        />
+        <button id="Login_btn" type="button">Login</button>
+        <button id="Register_btn" type="button">Register</button>
+        <button id="Play_btn" type="button">Play</button>
+      </div>
+    </div>
+
+    <!-- Register Content -->
+    <div id="Register_content" class="content" style="display: none">
+      <div class="container-form">
+        <form class="register">
+          <div class="container">
+            <h1>Register</h1>
+
+            <table style="width:90%; font-size: 2vmin;">
+              <tr>
+                <td>First Name</td>
+                <td><input
+                  id="register_firstname"
+                  type="text"
+                  placeholder="Enter first name"
+                  name="firstname"
+                  width="2vh"
+                  required
+                  autofocus
+                /></td>
+                <td>Last Name</td>
+                <td><input
+                  id="register_lastname"
+                  type="text"
+                  placeholder="Enter last name"
+                  name="lastname"
+                  required
+                  autofocus
+                /></td>
+                <td>Email</td>
+                <td><input
+                  id="register_email"
+                  type="text"
+                  placeholder="Enter email"
+                  name="email"
+                  required
+                  autofocus
+                /></td>
+              </tr>
+                            
+              <tr>
+                <td>Date Of Birth</td>
+                <td><div class="inline">
+                  <select id="days" required></select>
+                  <select id="months" required></select>
+                  <select id="years" required></select>
+                </div></td>
+                <td>username</td>
+                <td><input
+                  id="register_username"
+                  type="text"
+                  placeholder="Enter Username"
+                  name="uname"
+                  required
+                  autofocus
+                /></td>
+                <td>Password</td>
+                <td> <input
+                  type="password"
+                  placeholder="Enter Password"
+                  name="psw"
+                  id="register_password"
+                  required
+                  autofocus
+                /></td>
+              </tr>
+            </table>
+
+            <div class="alert" id="alert_register" role="alert">
+              <strong><u>Warning:</u><br /></strong>
+              <span id="alert_details_register"></span>
+            </div>
+
+            <div class="inline button">
+              <button id="submit_register" type="button">Register</button>
+              <button type="reset">Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Login Content -->
+    <div id="Login_content" class="content" style="display: none">
+      <div class="container-form">
+        <form id="login_form">
+          <div class="container">
+            <h1>Login</h1>
+
+            <div class="imgcontainer">
+              <img src="./assets/loginIcon.png" alt="Avatar" class="avatar" />
+            </div>
+            <label for="uname"><b>Username</b></label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              id="login_username"
+              name="login_username"
+              required
+              autofocus
+            />
+            <label for="psw"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              id="login_password"
+              name="login_password"
+              required
+              autofocus
+            />
+            <div class="alert" id="alert_login" role="alert">
+              <strong>Warning<br /></strong>
+              <span id="alert_details_login"></span>
+            </div>
+
+            <button id="sign_in_btn" type="button">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Game Settings new -->
+    <div id="Settings_content" class="content " style="display: none; font-family: Arial, Helvetica, sans-serif; font-size: 4vmin;">
+      <div class="container-form">
+        <form class="setting-form">
+          <div class="container">
+            <h3>Game Settings</h3>
+            <div class="game-props-row">
+              <div id="abcde" class="my-table game-props-col prop-setting">
+                <div><u>Properties</u></div>
+                <table style="width:100%; margin-top: 3%;">
+                  <tr>
+                    <td>Balls [50-90]</td>
+                    <td> <input
+                      class="form-control"
+                      id="ball_numbers"
+                      max="90"
+                      min="50"
+                      width="2%"
+                      name="name_balls"
+                      pattern="\d+"
+                      type="number"
+                      value="50"
+                      required
+                      autofocus
+                    /> </td>
+                  </tr>
+                  <tr>
+                    <td>Ghosts [1-4]</td>
+                    <td> <input
+                      class="form-control"
+                      id="ghost_numbers"
+                      max="4"
+                      min="1"
+                      name="name_ghosts"
+                      pattern="\d+"
+                      placeholder=""
+                      required
+                      type="number"
+                      value="2"
+                      required
+                      autofocus
+                    /></td>
+                  </tr>
+                  <tr>
+                    <td>Game Time [60-600 sec]</td>
+                    <td> <input
+                      class="form-control"
+                      id="game_time"
+                      max="600"
+                      min="60"
+                      name="name_time"
+                      pattern="\d+"
+                      placeholder=""
+                      required
+                      type="number"
+                      value="60"
+                      required
+                      autofocus
+                    /></td>
+                  </tr>
+                  <tr>
+                    <td>Ghosts Speed Level [1-4]</td>
+                    <td> <input
+                      class="form-control"
+                      id="ghost_speed"
+                      max="4"
+                      min="1"
+                      name="speed_ghosts"
+                      pattern="\d+"
+                      placeholder=""
+                      required
+                      type="number"
+                      value="2"
+                      required
+                      autofocus
+                    /></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="my-table game-props-col">
+                <div><u>Game Keys</u></div>
+                <table style="width:70%; margin-top: 3%;">
+                  <tr>
+                    <td>Up</td>
+                    <td><input
+                      type="text"
+                      id="btn_keyup"
+                      value="ArrowUp"
+                      style="color: black"
+                      readonly
+                    /></td>
+                  </tr>
+        
+                  <tr>
+                    <td>Down</td>
+                    <td><input
+                      type="text"
+                      id="btn_keydown"
+                      value="ArrowDown"
+                      style="color: black"
+                      readonly
+                    /></td>
+                  </tr>
+        
+                  <tr>
+                    <td>Left</td>
+                    <td><input
+                      type="text"
+                      id="btn_keyleft"
+                      value="ArrowLeft"
+                      style="color: black"
+                      readonly
+                    /></td>
+                  </tr>
+        
+                  <tr>
+                    <td>Right</td>
+                    <td><input
+                      type="text"
+                      size="8"
+                      id="btn_keyright"
+                      value="ArrowRight"
+                      style="color: black"
+                      readonly
+                    /></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="my-table game-props-col prop-setting">
+                <div div><u>Game Keys</u></div>
+                  <table style="width:65%; margin-top: 3%;">
+                    <tr>
+                      <td>5 points</td>
+                      <td><input class="color" id="5points" required type="color" /></td>
+                    </tr>
+          
+                    <tr>
+                      <td>15 points</td>
+                      <td><input class="color" id="15points" required type="color" /></td>
+                    </tr>
+          
+                    <tr>
+                      <td>25 points</td>
+                      <td><input class="color" id="25points" required type="color" /></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="inline button">
+                <button id="start_play" type="button">Start!</button>
+                <button id="random" type="button">Random</button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Game Content -->
+    <div id="Game_content" class="content content-game" style="display: none; font-family: Arial, Helvetica, sans-serif; font-size: 3vmin;">
+      
+      <div id="setting-in-game" class="game-props-col"> 
+        <u>Setting:</u>
+
+        <table style="width:80%; margin-top: 3%;">
+          <tr>
+            <td>Username</td>
+            <td id="setting-username"></td>
+          </tr>
+
+          <tr>
+            <td>Balls</td>
+            <td id="setting-balls"></td>
+          </tr>
+          <tr>
+            <td>Ghosts</td>
+            <td id="setting-ghosts"></td>
+          </tr>
+          <tr>
+            <td>Ghosts Speed</td>
+            <td id="setting-ghosts-speed"></td>
+          </tr>
+          <tr>
+            <td>Time (sec)</td>
+            <td id="setting-time"></td>
+          </tr><tr></tr>
+          <tr>
+            <td>Up</td>
+            <td id="setting-up"></td>
+          </tr>
+
+          <tr>
+            <td>Down</td>
+            <td id="setting-down"></td>
+          </tr>
+
+          <tr>
+            <td>Left</td>
+            <td id="setting-left"></td>
+          </tr>
+
+          <tr>
+            <td>Right</td>
+            <td id="setting-right"></td>
+          </tr>
+
+          <tr>
+            <td>5 points</td>
+            <td><input id="setting-5-color" class="color" disabled type="color"/></td>
+          </tr>
+
+          <tr>
+            <td>15 points</td>
+            <td><input id="setting-15-color" class="color" disabled type="color"/></td>
+          </tr>
+
+          <tr>
+            <td>25 points</td>
+            <td><input id="setting-25-color" class="color" disabled type="color"/></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="game" class="game-container">
+        <canvas id="canvas" width="1100" height="1050"></canvas>
+      </div>
+
+      <div class="game-props-col dynamic-table">
+        <u>Game Progress:</u>
+        <table class="table-my" style="width:80%; margin-top: 3%;">
+          <tr>
+            <td>Health</td>
+            <td>
+              <div class="inline">
+                <img src="./assets/gameIcons/Heart.png" width="20"/>
+              </div>
+            </td>
+            <td id="lblHealth">
+              <img id="heart0" src="" width="15"/>
+              <img id="heart1" src="" width="15"/>
+              <img id="heart2" src="" width="15"/>
+              <img id="heart3" src="" width="15"/>
+              <img id="heart4" src="" width="15"/>
+            </td>
+          </tr>  
+
+          <tr>
+            <td>Score</td>
+            <td><img src="./assets/gameIcons/score.png" width="20"/></td>
+            <td id="lblScore"></td>
+          </tr>
+
+          <tr>
+            <td>Time Left</td>
+            <td><img src="./assets/gameIcons/timer.png" width="20"/></td>
+            <td id="lblTime"> </td>
+          </tr>   
+
+          <tr>
+            <td>Balls Left</td>
+            <td><img src="./assets/gameIcons/Ball.ico" width="20"/></td>
+            <td id="lblBallsLeft"> </td>
+          </tr>  
+
+        </table>   
+        <button id="btn_new_game" style="width: 70%;">
+          Start new game
+        </button> 
+      </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="About_modal" class="modal">
+      <div class="modal-header">
+        <span class="close-btn">&times;</span>
+      </div>
+      <div class="modal-content">
+        <h3>About Us</h3>
+		<p>This Game Was Developed by Tom Nachman and Asaf Salomon.</p>
+		<p>The jQuery pulgins we used in this program are: jquery validation.</p>
+		<p>We used the template that was pressented in the class.</p>
+		<p>The difficulties that we encounterd during development are:</p>
+		<p> * Desigining without bootstrap</p>
+		<p> * Makeing the chasing algorithm for the ghosts</p>
+      </div>
+      
+    </div>
+    <!-- Footer -->
+    <footer>
+      <p>Web Development Enviourmnets</p>
+      <p>
+        <a href="mailto:nachmant@post.bgu.ac.il">nachmant@post.bgu.ac.il</a>
+        <a href="mailto:asafsalo@post.bgu.ac.il">asafsalo@post.bgu.ac.il</a>
+      </p>
+    </footer>
+    
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/menu.js"></script>
+    <script type="text/javascript" src="./scripts/settings.js"></script>
+	  <script type="text/javascript" src="./scripts/ghosts.js"></script>
+  </body>
+ 
+</html>

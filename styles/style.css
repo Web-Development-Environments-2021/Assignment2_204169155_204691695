@@ -1,0 +1,429 @@
+/*html {
+  background: url("https://www.classicgaming.cc/classics/pac-man/images/web/seamless-background-pac-man-chalk-pattern-blue.jpg") 
+    scroll;
+}
+body {
+  background: url("https://www.classicgaming.cc/classics/pac-man/images/web/seamless-background-pac-man-chalk-pattern-blue.jpg");
+  margin-bottom: 60px;
+}*/
+
+@font-face {
+  font-family: "MyWebFont";
+  src: url("emulogic.ttf");
+}
+
+body {
+  font-family: "MyWebFont", sans-serif;
+}
+
+body::after {
+  content: "";
+  background: url("https://www.classicgaming.cc/classics/pac-man/images/web/seamless-background-pac-man-chalk-pattern-blue.jpg")
+  scroll;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+/*Header styles */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+  background: #082b24;
+  color: white;
+  font-size: 11px;
+  height: 10vh;
+}
+
+.devs-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: last baseline;
+  align-content: center;
+}
+
+h4 {
+  margin: 0%;
+  padding: 0%;
+}
+
+/*Nav Bar Styles */
+#menu-nav {
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  height: 6vh;
+  margin: 0%;
+  justify-content: center;
+  background-color: #ecf0f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* border: 3px solid rgb(39, 235, 21); */
+}
+
+#navigation-bar ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0%;
+  margin: 0%;
+  height: 100%;
+  border-radius: 0;
+  overflow: auto;
+  justify-content: space-evenly;
+  /* border: 3px solid rgb(37, 81, 202); */
+}
+#navigation-bar li {
+  float: left;
+  width: 15%;
+  height: 80%;
+  padding: 0%;
+  margin: 0%;
+  font-size: 1vmin;
+  /* border: 3px solid rgb(231, 15, 15); */
+}
+#navigation-bar li:hover a::before {
+  right: 0;
+  left: 0;
+}
+#navigation-bar a {
+  font-size: calc(3px + 2vmin);
+  color: #848484;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+#navigation-bar a:hover {
+  color: #454545;
+}
+#navigation-bar a::before {
+  content: "";
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  background-color: #484848;
+}
+#navigation-bar a:hover::before {
+  right: 0;
+  left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* --- Login Style */
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 3px solid rgb(12, 59, 231); */
+}
+
+/* Bordered form */
+form {
+  margin: 1vmin;
+  width: 35vw;
+  /* border: 3px solid rgb(88, 13, 59); */
+}
+
+.register{
+  width: 90vw;
+}
+
+.setting-form {
+  margin: 1vmin;
+  width: 90vw;
+  font-size: 2vmin;
+  /* border: 3px solid rgb(231, 180, 12); */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  /* border: 3px solid rgb(42, 139, 208); */
+}
+
+
+/* Full-width inputs */
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#login_form input {
+  font-size: 3vmin;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  width: 60%;
+  height: 5vmin;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #6a776d;
+  text-align: center;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  border-radius: 3%;
+  font-family: "MyWebFont", sans-serif;
+  font-size: 1.5vmin;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 15%;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3%;
+  width: 100%;
+  /* border: 3px solid rgb(231, 12, 140); */
+}
+
+.inline select {
+  margin: 1%;
+}
+
+.inline button {
+  margin: 1%;
+}
+
+.inline-props {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 1%;
+  width: 70%;
+}
+
+.above {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3%;
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 100%;
+  /* border: 3px solid rgb(90, 49, 73); */
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+}
+
+img#navbar_pacman {
+  margin-top: 10px;
+  display: block;
+  width: 50px;
+  height: auto;
+}
+
+/* Content */
+.content {
+  height: 76vh;
+  border: 1px solid #154a40;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-stretch: normal;
+  background: #154a40;
+  color: white;
+  height: 5vh;
+  margin-bottom: 0%;
+  padding-left: 1%;
+  padding-right: 1%;
+  font-size: 1.5vmin;
+}
+
+.content-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.game-container {
+  height: 70vmin;
+  width: 70vmin;
+  border: 5px solid rgb(106, 98, 98);
+}
+
+#canvas {
+  height: 70vmin;
+  width: 70vmin;
+}
+
+.alert{
+  font-size: 12px;
+  padding: 1%;
+  border: 5px solid rgb(255, 0, 0);
+
+}
+
+/* Modal - about */
+.modal {
+  display: none;
+  position: fixed;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.close-btn {
+  float: right;
+  color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: darkgray;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+#Settings_content input {
+  text-align: center;
+  font-size: 2vmin;
+  width: calc(20px + 15vmin);
+  height: calc(10px + 2vmin);
+}
+
+#abcde input{
+  font-size: 2vmin;
+  width: calc(5px + 6vmin);
+  height: calc(5px + 1.5vmin);
+}
+
+.game-props-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-props-col {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: center;
+  align-content: space-between;
+  justify-content: flex-start;
+  height: 40vh;
+  width: 33vw;
+}
+
+#setting-in-game{
+  margin-top: 1.5%;
+  height: 70vh;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.dynamic-table{
+  margin-top: 1.5%;
+  height: 50vh;
+  align-self: flex-start;
+}
+
+td {
+  text-align: center;
+}
+
+.my-table{
+  padding: 0%;
+  margin: 0%;
+  width: 27vw;
+}
