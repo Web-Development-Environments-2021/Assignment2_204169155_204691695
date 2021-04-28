@@ -1,12 +1,3 @@
-/*html {
-  background: url("https://www.classicgaming.cc/classics/pac-man/images/web/seamless-background-pac-man-chalk-pattern-blue.jpg") 
-    scroll;
-}
-body {
-  background: url("https://www.classicgaming.cc/classics/pac-man/images/web/seamless-background-pac-man-chalk-pattern-blue.jpg");
-  margin-bottom: 60px;
-}*/
-
 @font-face {
   font-family: "MyWebFont";
   src: url("emulogic.ttf");
@@ -18,7 +9,7 @@ body {
 
 body::after {
   content: "";
-  background: url("https://www.classicgaming.cc/classics/pac-man/images/web/seamless-background-pac-man-chalk-pattern-blue.jpg")
+  background: url("../assets/backImg.jpg")
   scroll;
   opacity: 0.5;
   top: 0;
