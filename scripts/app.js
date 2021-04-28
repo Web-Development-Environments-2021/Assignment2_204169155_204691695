@@ -99,7 +99,7 @@ function Draw() {
 		}
 
 		else{
-			$("#heart" + i).attr("src", "./assets/gameIcons/emptyHeart.png");
+			$("#heart" + i).attr("src", "../assets/gameIcons/emptyHeart.png");
 		}
 	}
 	for (var i = 0; i < BOARD_HEIGHT; i++) {
