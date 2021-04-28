@@ -296,7 +296,6 @@ document.addEventListener('keydown', function (e) {
 
 
 // $("#login_form").validate({
-//   // Specify validation rules
 //   rules: {
 //     login_username: {
 //       required: true,
@@ -307,14 +306,14 @@ document.addEventListener('keydown', function (e) {
 //   },
 //   messages: {
 //     login_username: {
-//       required: "Username is  asdasdasdasda"
+//       required: "Username is  required"
 //     },
 //     login_password: {
-//       required: "Password Username is messing.",
+//       required: "Password is required",
 //     }
 //   },
 //   submitHandler: function () {
-//     let form = $("#contact_form_login");
+//     let form = $("#login_form");
 //     form[0].reset();
 //   }
 // });
